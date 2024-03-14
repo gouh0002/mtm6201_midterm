@@ -1,0 +1,40 @@
+@media only screen and (min-width: 768px) {
+    .categories div {
+        flex-direction: row;
+    }
+
+
+    .footer-nav {
+        display: none;
+    }
+
+    .top-nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding-left: 0px;
+        padding-right: 0px;
+        flex-grow: 1;
+    }
+
+    .menu-icon {
+        flex-direction: row;
+    }
+
+    .menu-icon>* {
+        padding: 0 5px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .item-card {
+        margin-inline: 1rem;
+    }
+
+    .cart-items {
+        display: flex;
+        flex-flow: row;
+        gap: 10px;
+        justify-content: space-around;
+
+    }
+}

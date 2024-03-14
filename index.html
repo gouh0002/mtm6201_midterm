@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midterm Assignement</title>
+  <!-- Link to reset CSS -->
+  <link href="css/reset.css" rel="stylesheet" />
+  <!-- Google Fonts and icons-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="css/main-large-screen.css" rel="stylesheet" />
+<!-- based on https://schema.org/hasMenuItem A food or drink item contained in a menu or menu section.
+I didn't find an example of applying it to html tags so I used the JSON LD specification
+-->
+<script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Midterm Assignment menu",
+      "description": "Menu for the midterm assignment website",
+      "hasMenuSection": [
+          {
+              "@type": "MenuSection",
+              "name": "Categories",
+              "hasMenuItem": [
+                  {
+                      "@type": "MenuItem",
+                      "name": "Burgers",
+                      "url": "https://gouh0002.github.io/midtermSM2/burgers"
+                  },
+                  {
+                      "@type": "MenuItem",
+                      "name": "Pizza",
+                      "url": "https://gouh0002.github.io/midtermSM2/pizza"
+                  },
+                  {
+                      "@type": "MenuItem",
+                      "name": "Cakes",
+                      "url": "https://gouh0002.github.io/midtermSM2/cakes"
+                  }
+              ]
+          },
+          {
+              "@type": "MenuSection",
+              "name": "Popular Items",
+              "hasMenuItem": [
+                  {
+                      "@type": "MenuItem",
+                      "name": "Chipotle Cheesy Chicken",
+                      "description": "Chicken Burger",
+                      "url": "https://gouh0002.github.io/midtermSM2/chipotle-cheesy-chicken",
+                      "offers": {
+                          "@type": "Offer",
+                          "price": "$20.95"
+                      }
+                  }
+              ]
+          }
+      ]
+  }
+</script>
+</head>
+
+<body>
+  <ul class="skip-links">
+    <li><a href="#navbar">Skip to navigation bar</a></li>
+    <li><a href="#search-input">Skip to search</a></li>
+    <li><a href="#categories">Skip to categories</a></li>
+    <li><a href="#popular">Skip to popular items</a></li>
+  </ul>
+  <div class="container">
+    <header class="home-header" role="banner" aria-label="Header">
+      <!-- Drop down more menu items -->
+      <nav><span class="material-symbols-outlined burger-menu" role="button" aria-haspopup="true" aria-expanded="false">
+          menu
+        </span>
+        <div class="dropdown-menu" role="menu">
+          <a href="#" role="menuitem"><span class="material-symbols-outlined">
+              location_on
+            </span><span>Locations</span></a>
+          <a href="#" role="menuitem"><span class="material-symbols-outlined">
+              info
+            </span><span>Abous Us</span></a>
+          <a href="#" role="menuitem"><span class="material-symbols-outlined">
+              mail
+            </span><span>Contact Us</span></a>
+        </div>
+      </nav>
+      <!-- top navigation barre for large screen -->
+      <nav id="navbar" class="top-nav" aria-label="Top Navigation">
+        <a href="#" class="menu-icon active-icon" role="menuitem"><span class="material-symbols-outlined">
+            dashboard
+          </span><span>Home</span> </a>
+        <a href="#" class="menu-icon" role="menuitem"><span class="material-symbols-outlined">
+            favorite
+          </span><span>Favorites</span></a>
+        <a href="#" class="menu-icon" role="menuitem"><span class="material-symbols-outlined">
+            person
+          </span><span>Account</span></a>
+      </nav>
+
+      <span class="adress-header"><span class="material-symbols-outlined location-icon">
+          location_on
+        </span> Chicago, <span class="map-state">IL</span></span>
+      <!-- Different profile picture sizes for different screen resolutions -->
+      <picture>
+        <source media="(max-width: 640px)" srcset="images/profile_40.png, images/profile_80.png 2x">
+        <source media="(max-width: 1280px)" srcset="images/profile_80.png, images/profile_120.png 2x">
+        <source media="(max-width: 2560px)" srcset="images/profile_120.png, images/profile_160.png 2x">
+        <img alt="profile picture" src="images/profile.png" title="" class="profile-pic" />
+      </picture>
+    </header>
+
+    <main>
+
+      <!-- Home page search  -->
+      <section class="home-search" role="search">
+        <h1>Hey!</h1>
+        <p class="text-secondary">Let's get your order</p>
+        <div class="search-input">
+          <span class="material-symbols-outlined" aria-hidden="true"></span>>
+          search
+          </span>
+          <input id="serach-input" type="text" placeholder="Search our delicious burgers" aria-label="Search">
+      </section>
+
+      <!-- Categories section -->
+      <section id="categories" class="categories" role="navigation" aria-label="Categories">
+        <div class="active-element" role="listitem">
+
+          <!-- Burger category -->
+          <!-- Different burger icon sizes for different screen resolutions -->
+          <picture>
+            <source media="(max-width: 640px)"
+              srcset="images/burger_50.png, images/burger_100.png 2x, images/burger_150.png 3x">
+            <source media="(max-width: 1280px)"
+              srcset="images/burger_100.png, images/burger_150.png 1.5x, images/burger_200.png 2x">
+            <source media="(max-width: 2560px)" srcset="images/burger_200.png">
+            <img alt="burger icon" src="images/burger_icon.png">
+          </picture>
+          <p>Burgers</p>
+          <span class="material-symbols-outlined  .active-element" aria-hidden="true">
+            navigate_next
+          </span>
+
+        </div>
+        <div role="listitem">
+          <!-- Pizza category -->
+          <!-- Different pizza icon sizes for different screen resolutions -->
+          <picture>
+            <source media="(max-width: 640px)"
+              srcset="images/pizza_50.png, images/pizza_100.png 2x, images/pizza_150.png 3x">
+            <source media="(max-width: 1280px)"
+              srcset="images/pizza_100.png, images/pizza_150.png 1.5x, images/pizza_200.png 2x">
+            <source media="(max-width: 2560px)" srcset="images/pizza_200.png">
+            <img alt="pizza icon" src="images/pizza_icon.png">
+          </picture>
+          <p>Pizza</p>
+          <span class="material-symbols-outlined" aria-hidden="true">
+            navigate_next
+          </span>
+
+        </div>
+        <div role="listitem">
+          <!-- cake category -->
+          <!-- Different cake icon sizes for different screen resolutions -->
+          <picture>
+            <source media="(max-width: 640px)"
+              srcset="images/cake_50.png, images/cake_100.png 2x, images/cake_150.png 3x">
+            <source media="(max-width: 1280px)"
+              srcset="images/cake_100.png, images/cake_150.png 1.5x, images/cake_200.png 2x ">
+            <source media="(max-width: 2560px)" srcset="images/cake_200.png">
+            <img alt="cake icon" src="images/cake_icon.png">
+          </picture>
+          <p>Cakes</p>
+          <span class="material-symbols-outlined" aria-hidden="true">
+            navigate_next
+          </span>
+
+        </div>
+      </section>
+      <!-- Popular items section -->
+      <section id="popular" aria-label="Popular Items">
+        <div class="section-header" role="heading" aria-level="3">
+          <h3>Popular</h3>
+          <a> View all <span class="material-symbols-outlined">
+              navigate_next
+            </span> </a>
+        </div>
+        <div class="section-content" role="list">
+          <!-- Item cards display many items-->
+          <article class="item-card" role="listitem">
+            <a href="order.html">
+              <div class=section-image>
+                <picture>
+                  <source media="(max-width: 640px)"
+                    srcset="images/cheese_burger_200.png, images/cheese_burger_300.png 1.5x, images/cheese_burger_400.png 2x">
+                  <source media="(max-width: 1280px)"
+                    srcset="images/cheese_burger_400.png, images/cheese_burger_600.png 1.5x, images/cheese_burger_800.png 2x">
+                  <source media="(max-width: 2560px)" srcset="images/cheese_burger_800.png">
+                  <img src="images/cheese_burger.png" alt=" cheese burger">
+                </picture>
+              </div>
+              <div class="item-info">
+                <p class="item-name">Chipotle Cheesy Chicken (1)</p>
+                <p class="item-price">$20.95</p>
+                <p class="item-desc">Chicken Burger</p>
+              </div>
+            </a>
+          </article>
+          <article class="item-card" role="listitem">
+            <a href="order.html">
+              <div class=section-image>
+                <picture>
+                  <source media="(max-width: 640px)"
+                    srcset="images/cheese_burger_200.png, images/cheese_burger_300.png 1.5x, images/cheese_burger_400.png 2x">
+                  <source media="(max-width: 1280px)"
+                    srcset="images/cheese_burger_400.png, images/cheese_burger_600.png 1.5x, images/cheese_burger_800.png 2x">
+                  <source media="(max-width: 2560px)" srcset="images/cheese_burger_800.png">
+                  <img src="images/cheese_burger.png" alt=" cheese burger">
+                </picture>
+              </div>
+              <div class="item-info">
+                <p class="item-name">Chipotle Cheesy Chicken (2)</p>
+                <p class="item-price">$20.95</p>
+                <p class="item-desc">Chicken Burger</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="item-card" role="listitem">
+            <a href="order.html">
+              <div class=section-image>
+                <picture>
+                  <source media="(max-width: 640px)"
+                    srcset="images/cheese_burger_200.png, images/cheese_burger_300.png 1.5x, images/cheese_burger_400.png 2x">
+                  <source media="(max-width: 1280px)"
+                    srcset="images/cheese_burger_400.png, images/cheese_burger_600.png 1.5x, images/cheese_burger_800.png 2x">
+                  <source media="(max-width: 2560px)" srcset="images/cheese_burger_800.png">
+                  <img src="images/cheese_burger.png" alt=" cheese burger">
+                </picture>
+              </div>
+              <div class="item-info">
+                <p class="item-name">Chipotle Cheesy Chicken (3)</p>
+                <p class="item-price">$20.95</p>
+                <p class="item-desc">Chicken Burger</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+
+    </main>
+
+  </div>
+  <!-- Footer -->
+  <footer class="home-footer" role="contentinfo" aria-label="Footer">
+    <!-- Footer navigation links -->
+    <nav class="footer footer-nav" aria-label="Footer Navigation">
+      <a href="#" class="menu-icon active-icon" role="menuitem"><span class="material-symbols-outlined">
+          dashboard
+        </span><span>Home</span> </a>
+      <a href="#" class="menu-icon" role="menuitem"><span class="material-symbols-outlined">
+          favorite
+        </span><span>Favorites</span></a>
+      <a href="#" class="menu-icon" role="menuitem"><span class="material-symbols-outlined">
+          person
+        </span><span>Account</span></a>
+      <a href="#" class="menu-icon more-icon" role="menuitem"><span class="material-symbols-outlined">
+          more_horiz
+        </span><span>More</span></a>
+    </nav>
+
+
+  </footer>
+</body>
+
+</html>

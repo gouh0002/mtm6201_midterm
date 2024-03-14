@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Midterm Assignement cart page</title>
+    <link href="css/reset.css" rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/main-large-screen.css" rel="stylesheet" />
+</head>
+
+<body>
+    <ul class="skip-links">
+      <li><a href="#apply-coupon">Skip to coupon</a></li>
+      <li><a href="#payment">Skip to payment</a></li>
+    </ul>
+    <div class="container">
+        <header class="home-header" role="banner" aria-label="Cart Page Header">
+            <a href="order.html" aria-label="Back to Order">
+                <button class="button button-regular square"><span class="material-symbols-outlined">
+                        chevron_left
+                    </span></button>
+            </a>
+            <h3>Cart</h4>
+
+                <button class="button button-regular square"><span class="material-symbols-outlined">
+                        more_vert
+                    </span></button>
+        </header>
+
+        <main role="main" aria-label="Cart Page Content">
+            <section class="cart-items" role="region" aria-label="Cart Items">
+                <article class="cart-item">
+                    <picture>
+                        <source media="(max-width: 640px)"
+                            srcset="images/cheese_burger_80.png, images/cheese_burger_160.png 2x, images/cheese_burger_240.png 3x">
+                        <source media="(max-width: 1280px)"
+                            srcset="images/cheese_burger_160.png, images/cheese_burger_320.png 2x">
+                        <source media="(max-width: 2560px)" srcset="images/cheese_burger_320.png">
+                        <img src="images/cheese_burger_small.png" alt=" cheese burger">
+                    </picture>
+                    <h3 class="single-line">Chiplote Cheesy Chiken</h3>
+                    <button class="button button-invisible text-red"aria-label="Remove item">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </button>
+
+                    <div class="cart-item-qty" role="group" aria-label="Quantity Selection">
+                        <button class="button button-invisible text-red" aria-label="Decrease Quantity">
+                            -
+                        </button>
+                        <span class="text-medium">2</span>
+                        <button class="button button-invisible text-red" aria-label="Increase Quantity">
+                            +
+                        </button>
+                    </div>
+                    <p class="text-medium">$41.90</p>
+                </article>
+                <article class="cart-item">
+                    <picture>
+                        <source media="(max-width: 640px)"
+                            srcset="images/beef_burger_80.png, images/beef_burger_160.png 2x, images/beef_burger_240.png 3x">
+                        <source media="(max-width: 1280px)"
+                            srcset="images/beef_burger_160.png, images/beef_burger_320.png 2x">
+                        <source media="(max-width: 2560px)" srcset="images/beef_burger_320.png">
+                        <img src="images/beef_burger_small.png" alt=" beef burger">
+                    </picture>
+                    <h3 class="single-line">Beef Burger</h3>
+                    <button class="button button-invisible text-red"aria-label="Remove item">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </button>
+                    <div class="cart-item-qty" role="group" aria-label="Quantity Selection">
+                        <button class="button button-invisible text-red" aria-label="Decrease Quantity">
+                            -
+                        </button>
+                        <span class="text-medium">1</span>
+                        <button class="button button-invisible text-red" aria-label="Increase Quantity">
+                            +
+                        </button>
+                    </div>
+                    <p class="text-medium">$20.95</p>
+                </article>
+
+            </section>
+
+            <section class="footer payment">
+
+                <button class="button button-regular button-dark" id="apply-coupon" aria-label="Apply Coupons">
+                    <div>
+                        <span>Apply Coupons</span><span class="material-symbols-outlined">
+                            arrow_right_alt
+                        </span>
+                    </div>
+                </button>
+                <div class="total-detail">
+                    <div class="total-line">
+                        <p class="text-secondary">Item Total</p>
+                        <p class="text-small">$62.85</p>
+                    </div>
+
+                    <div class="total-line">
+                        <p class="text-secondary">Delivery Charge</p>
+                        <p class="text-small">$2.85</p>
+                    </div>
+                    <div class="total-line">
+                        <p class="text-secondary">Tax</p>
+                        <p class="text-small">$65.85</p>
+                    </div>
+                    <div class="total-line">
+                        <p class="text-medium">Total</p>
+                        <p class="text-medium">$65.35</p>
+                    </div>
+                </div>
+
+                <button class="button button-regular button-active" id="payment" aria-label="Proceed to Payment Method">Proceed to payement method </button>
+
+
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

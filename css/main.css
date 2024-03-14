@@ -1,0 +1,611 @@
+
+/* Define global variables */
+:root {
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --background-color: #ffffff;
+    --main-color: #000000;
+    --secondary-color: #667C8A;
+    --active-color: #c8161d;
+    --active-light-color: #ff9595;
+    --button-inline-padding: 1rem;
+}
+
+/* Set default font family same as the one used in the figma prototype*/
+html {
+    font-family: "Poppins", sans-serif;
+
+}
+/* Set body height to provide adequate space at the bottom of the viewport for potential elements*/
+body {
+    height: 90vh;
+}
+/* Heading styles to keep the font size consistent between all pages */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+h2,
+.text-big {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h3,
+.text-medium {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+h4,
+.text-small {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    height: 100%;
+}
+
+.container {
+    max-width: 95vw;
+    margin: auto;
+    margin-top: 1.5rem;
+    height: 100%;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+}
+/* Skip links styling: Enhances accessibility by providing a skip link for keyboard navigation to easily access the menu. The links are positioned absolutely at the top with a top value of -50px to hide them initially. When focused, they appear with a top value of 20px to bring them into view. */
+.skip-links a {
+    text-decoration: none;
+    color: rgb(255, 249, 249);
+    position: absolute;
+    top: -50px;
+    background-color: rgb(144, 12, 12);
+  padding: 0.5rem;
+  }
+
+  /* Adjusts link position when focused. */
+  .skip-links a:focus{
+  top:20px;
+  }
+/* Applying padding to inner elements while excluding the first and last children within .home-header to maintain consistent spacing, enhance readability, and improve visual aesthetics. */
+.home-header>*:not(:first-child):not(:last-child) {
+    padding: 0 1rem;
+}
+
+.profile-pic {
+    width: 2rem;
+    height: 2rem;
+}
+/* Applies cursor pointer to elements with classes .burger-menu and .profile-pic */
+.burger-menu,
+.profile-pic {
+    cursor: pointer;
+}
+
+.burger-menu:hover+.dropdown-menu,
+.dropdown-menu:hover {
+    height: 9rem;
+}
+/* 
+Styles for dropdown menu:
+- Positioned it absolutely
+- Used flex layout with center-aligned columns
+- Set background color, applied box shadow, rounded corners, and hid overflow
+- Defined transition for height property to create smooth animation
+Hover effect changes background color of items
+*/
+.dropdown-menu {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+    box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    height: 0em;
+    overflow: hidden;
+    transition-property: height;
+    transition: height 1s ease-in-out;
+}
+
+.dropdown-menu>*:hover {
+    background-color: var(--active-light-color);
+}
+
+.dropdown-menu a>* {
+    margin: 10px;
+}
+
+.top-nav {
+    display: none;
+}
+/* Icon style: Bold, filled, 700 weight, dark red color. Adjusted font gradient for smoothness. Optical size 20 for clarity. Set using font-variation-settings and color in .location-icon class. */
+.location-icon {
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 200, 'opsz' 20;
+    color: darkred;
+}
+
+.adress-header {
+    font-weight: bold;
+}
+/* Ensures consistency by styling elements with grey text to have the same color, font weight of 400, and expanded font stretch. */
+.map-state,
+.menu-icon,
+.text-secondary,
+.search-input,
+.item-desc {
+    color: var(--secondary-color);
+    font-weight: 400;
+    font-stretch: expanded;
+}
+
+.home-search {
+    margin-top: 1rem;
+}
+
+.home-search p {
+    font-size: 1.2rem;
+}
+/* Styles for search input */
+/* Displays as a flex container with full width, no border, and a box shadow using var(--shadow-color) for effect. Rounded corners with a border-radius of 10px. */
+.search-input {
+    display: flex;
+    width: 100%;
+    border: none;
+    box-shadow: 0 0 50px 10px var(--shadow-color);
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.search-input>* {
+    border: none;
+    padding-block: 1rem;
+    padding-inline-start: 1rem;
+}
+
+.search-input input {
+    width: 100%;
+    background: none;
+}
+
+
+/* style categories container */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    column-gap: 2rem;
+    font-size: 1.2rem;
+    font-weight: 550;
+    animation: 1s ease-out 0s 1 slideFromLeft;
+    overflow-inline: hidden;
+}
+
+.categories div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+}
+
+.categories div>* {
+    align-self: center;
+    margin: 1rem;
+}
+
+.categories div>img {
+    margin: 0;
+}
+
+.categories div:hover {
+    background-color: #c8161d;
+    color: white;
+}
+
+
+.categories .material-symbols-outlined {
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    padding: 0.2rem;
+}
+
+.categories div:hover .material-symbols-outlined,
+.active-element .material-symbols-outlined {
+    color: #c8161d;
+    background-color: white;
+}
+
+/* style popular section */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.section-header a {
+    font-size: 0.8rem;
+    color: #c8161d;
+    font-weight: 600;
+}
+
+
+
+/* style the image of popular section */
+
+.section-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* display: grid; */
+    justify-content: space-evenly;
+    animation: smooth-appear 2s ease forwards;
+}
+
+.section-image {
+    display: flex;
+    background-color: #c8161d;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.section-image img {
+    width: 100%;
+    margin-top: -50px;
+    margin-bottom: 2rem;
+    gap: 10px;
+}
+
+.item-card {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin-top: 3rem;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.item-card a>* {
+    margin-bottom: 1.2rem;
+}
+
+.item-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    row-gap: 10px;
+    /* max-width: 90%; */
+}
+
+.item-price {
+    text-align: end;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* .item-card p:nth-child(2) {
+    font-weight: bold;
+   } */
+.item-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+
+}
+
+/* style footer */
+
+/* .footer-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+   } */
+/* footer{
+    width: 100%;
+   } */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    box-sizing: border-box;
+}
+
+.footer-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 15px;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: -2rem;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    color: darkgray;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-letter {
+    width: 3rem;
+    height: 3rem;
+    flex: 1;
+}
+
+.order-selection {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 95%;
+    width: 484px;
+    margin: auto;
+}
+
+.order-selection * {
+    text-align: center;
+}
+
+.order-title {
+    margin: 0 3rem;
+}
+
+.order-h3 {
+    font-weight: bold;
+    padding: 1.5em;
+
+}
+
+.item-background {
+    box-shadow: 0px 10px .5em rgba(0, 0, 0, 0.1);
+    width: 100%;
+    aspect-ratio: 1/1;
+    width: 500px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    z-index: -100;
+    margin: auto;
+    overflow-inline: hidden;
+}
+
+.order-image img {
+    object-fit: none;
+}
+
+.size-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 4rem;
+}
+
+.single-letter:nth-child(1) {
+    grid-column: 1;
+}
+
+.single-letter:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.single-letter:nth-child(3) {
+    grid-column: 3;
+}
+
+.qty-selection {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    font-weight: bolder;
+}
+
+.qty-selection>span,
+.cart-item-qty>span,
+.button-regular>span {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* .header-order .material-symbols-outlined .favorite{
+    align-self: center;
+ } */
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.total-price>* {
+    margin: .6rem 0;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    ;
+    grid-auto-rows: auto auto;
+    /* gap: 10px; */
+    align-items: center;
+    box-shadow: 0px 0px 5px var(--shadow-color);
+    margin-block: 1rem;
+    padding: 1rem 1rem;
+}
+
+.cart-item>*:nth-child(1) {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.cart-item>*:nth-child(odd):not(:first-child) {
+    justify-self: end;
+}
+
+.cart-item>img {
+    width: 100%;
+}
+
+.cart-item-qty {
+    display: flex;
+    border: none;
+    box-shadow: 0px 0px 1px var(--shadow-color);
+    width: fit-content;
+}
+
+.payment {
+    display: inline-block;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    max-width: 95vw;
+}
+
+.total-detail {
+    border-top: solid 1px var(--shadow-color);
+    margin: 1rem 0;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1rem;
+}
+
+/* Button styles */
+
+.button-regular {
+    background-color: white;
+    box-shadow: 0 0 10px 5px var(--shadow-color);
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.button-regular.square {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: unset;
+}
+
+.button{
+    cursor: pointer;
+}
+
+.button:hover {
+    color: var(--background-color);
+    background-color: var(--active-color);
+}
+
+.button:active {
+    transform: translateY(2px);
+}
+
+.button-rounded {
+    font-size: 24px;
+    font-weight: lighter;
+    border-radius: 50%;
+    background-color: var(--active-light-color);
+}
+
+.button-active {
+    color: var(--background-color);
+    background-color: var(--active-color);
+}
+
+.button-dark {
+    color: var(--background-color);
+    background-color: var(--main-color);
+}
+
+.button-rounded-left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-right: 2rem;
+    width: unset;
+}
+
+.button>div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.button-active-left>span {
+    display: inline-flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.button-invisible {
+    background-color: var(--background-color);
+    border: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 24px;
+}
+
+.single-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.active-icon {
+    color: #c8161d;
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+}
+
+.active-element {
+    color: var(--background-color);
+    background-color: var(--active-color);
+}
+
+.text-red {
+    color: var(--active-color);
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes smooth-appear {
+    0% {
+        transform: translateY(+100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midterm Assignement order page</title>
+  <!-- Link to reset CSS -->
+  <link href="css/reset.css" rel="stylesheet" />
+
+  <!-- Google Fonts and icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="css/main-large-screen.css" rel="stylesheet" />
+</head>
+
+<body>
+  <ul class="skip-links">
+    <li><a href="#size-selection">Skip to size selection</a></li>
+    <li><a href="#quantity">Skip to quantity</a></li>
+    <li><a href="#go-to-cart">Skip to cart</a></li>
+  </ul>
+  <div class="container order-container">
+    <header class="home-header" role="banner" aria-label="Order Page Header">
+      <!-- Back button -->
+      <a href="index.html" aria-label="Back to Home">
+        <button class="button button-regular square"><span class="material-symbols-outlined"> chevron_left </span></button>
+      </a>
+      <!-- Favorite button -->
+      <button class="button button-regular square text-red"><span class="material-symbols-outlined" class="favorire-icon">
+          favorite
+        </span></button>
+    </header>
+
+    <main role="main" aria-label="Order Page Content">
+      <!-- Order selection section -->
+      <article class="order-selection" role="article" aria-label="Order Details">
+        <div class="order-title">
+          <h3 class="order-h3">Chipotle Cheesy Chicken</h3>
+          <p class="order-p text-secondary">
+            A signature flame-grilled chicken patty topped with smoked beef
+          </p>
+        </div>
+        <!-- Image of the item -->
+        <div class="item-background"></div>
+
+        <!-- <div class="order-item"> -->
+        <!-- Different beef burger image sizes for different screen resolutions -->
+        <picture>
+          <!-- <source media="(min-width: 1280px)"
+            srcset="images/beef_burger_320.png, images/beef_burger_240.png 1.5x, images/beef_burger_727.png 2x"> -->
+          <source media="(min-width: 640px)"
+            srcset="images/beef_burger_320.png, images/beef_burger_727.png 1.5x, images/beef_burger_969.png 2x">
+          <source media="(min-width: 320px)"
+            srcset="images/beef_burger_160.png, images/beef_burger_240.png 1.5x, images/beef_burger_320.png 2x">
+          <img src="images/beef_burger.png" alt=" beef burger" aria-hidden="true">
+        </picture>
+        <!-- Size item selection buttons -->
+        <div id="size-selection" class="size-selection" role="group" aria-label="Size Selection">
+          <button class="button button-regular square single-letter">S</button>
+          <button class="button button-regular square single-letter active-element">M</button>
+          <button class="button button-regular square single-letter">L</button>
+        </div>
+
+        <!-- Quantity items selection buttons -->
+        <div id="quantity" class="qty-selection" role="group" aria-label="Quantity Selection">
+          <button class="button button-regular square button-rounded"  aria-label="Decrease Quantity">-</button>
+          <span>2</span>
+          <button class="button button-regular square button-rounded"  aria-label="Increase Quantity">+</button>
+        </div>
+
+      </article>
+      <!-- Footer -->
+      <footer  role="contentinfo" aria-label="Order Page Footer">
+        <div class="footer order-footer">
+          <!-- Total price of the order -->
+          <div class="total-price">
+            <p class="text-secondary">Price</p>
+            <p class="text-big">$ 41.90</p>
+          </div>
+          <!-- Go to cart button -->
+          <a href="cart.html" id="go-to-cart" aria-label="Go to Cart">
+            <button class="button-regular button-active button-rounded-left">
+              <div>
+                <span class="material-symbols-outlined"> local_mall </span>
+                <span>Go to cart</span>
+              </div>
+            </button>
+          </a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <!--close .container-->
+</body>
+
+</html>
